@@ -1,0 +1,21 @@
+{
+  "name": "Budget FCFA",
+  "short_name": "Budget",
+  "description": "Suivi personnel du budget et de la trésorerie en FCFA, sur le téléphone.",
+  "lang": "fr-CI",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1E2A5E",
+  "theme_color": "#1E2A5E",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Noter une dépense", "short_name": "Dépense", "url": "./?noter=depense", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Noter une entrée", "short_name": "Entrée", "url": "./?noter=entree", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr-CI">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Budget FCFA</title>
+<meta name="description" content="Suivi personnel du budget et de la trésorerie en FCFA.">
+<meta name="theme-color" content="#1E2A5E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" width="0" height="0">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7M6 9.5V20h12V9.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20v-7M12 20V5M19 20v-11"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-4-4M20 16H6l4 4"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3zM12 10v4M12 17h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4 10-11"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M3 12h18"/></symbol>
+  </defs>
+</svg>
+<div id="app" hidden>
+  <header class="topbar">
+    <h1 id="view-title" tabindex="-1">Mon argent</h1>
+    <div class="month-nav" id="month-nav">
+      <button type="button" class="icon-btn" id="month-prev" aria-label="Mois précédent"><svg class="i"><use href="#i-left"/></svg></button>
+      <output id="month-label" aria-live="polite"></output>
+      <button type="button" class="icon-btn" id="month-next" aria-label="Mois suivant"><svg class="i"><use href="#i-right"/></svg></button>
+    </div>
+  </header>
+  <main id="view"></main>
+  <nav class="tabs" aria-label="Navigation principale">
+    <a href="#accueil" data-tab="accueil"><svg class="i" aria-hidden="true"><use href="#i-home"/></svg>Accueil</a>
+    <a href="#operations" data-tab="operations"><svg class="i" aria-hidden="true"><use href="#i-list"/></svg>Opérations</a>
+    <a href="#budgets" data-tab="budgets"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg>Budgets</a>
+    <a href="#analyse" data-tab="analyse"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg>Analyse</a>
+    <a href="#reglages" data-tab="reglages"><svg class="i" aria-hidden="true"><use href="#i-gear"/></svg>Réglages</a>
+  </nav>
+</div>
+<dialog id="sheet" class="sheet" aria-labelledby="sheet-title"></dialog>
+<div id="lock" class="lock" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript>Cette application a besoin de JavaScript pour fonctionner.</noscript>
+</body>
+</html>
